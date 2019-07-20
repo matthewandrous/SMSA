@@ -12,8 +12,12 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
     
 //    let announcement: AnnouncementCell? = nil
     
+    @IBOutlet weak var announcementsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AnnouncementsModel.announcementsModel.test()
         
         guard let url = URL(string: "https://www.googleapis.com/calendar/v3/calendars/st-athanasius.org_uiq2ebabvqqh1jvf5uv7maa6pc@group.calendar.google.com") else {return}
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -31,18 +35,31 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
             }
         }
         task.resume()
+        
+        announcementsTableView.delegate = self
+        announcementsTableView.dataSource = self
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        print("IN numberOfSection()")
+        //return one section because we only have one section
+        //this was a dumb comment in retrospect
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Announcement", for: indexPath) as! AnnouncementCell
         
+        cell.announcementTitle?.text = AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["title"] as! String
+        
         return cell
     }
+    
     
 
     

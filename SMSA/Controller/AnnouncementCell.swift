@@ -9,6 +9,6 @@
 import UIKit
 
 class AnnouncementCell: UITableViewCell {
-    @IBOutlet weak var announcImage: UIImageView!
-    @IBOutlet weak var announcTitle: UILabel?
+    @IBOutlet weak var announcementTitle: UILabel!
+    
 }
