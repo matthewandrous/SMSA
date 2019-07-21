@@ -39,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
+		0B92D02922E3F50300999EBD /* SMSA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMSA.entitlements; sourceTree = "<group>"; };
 		7F81C77C22E26A5300895A58 /* SMSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F81C77F22E26A5300895A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +83,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B92D02A22E3F50300999EBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F81C77322E26A5300895A58 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +97,7 @@
 				7F81C79522E26A5400895A58 /* SMSATests */,
 				7F81C7A022E26A5400895A58 /* SMSAUITests */,
 				7F81C77D22E26A5300895A58 /* Products */,
+				0B92D02A22E3F50300999EBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +114,7 @@
 		7F81C77E22E26A5300895A58 /* SMSA */ = {
 			isa = PBXGroup;
 			children = (
+				0B92D02922E3F50300999EBD /* SMSA.entitlements */,
 				7FDA68A922E3C58E00536FBB /* Model */,
 				7FDA68AA22E3C59B00536FBB /* View */,
 				7FDA68AB22E3C5A000536FBB /* Controller */,
@@ -229,6 +239,11 @@
 				TargetAttributes = {
 					7F81C77B22E26A5300895A58 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.AutoFillCredentialProvider = {
+								enabled = 0;
+							};
+						};
 					};
 					7F81C79122E26A5400895A58 = {
 						CreatedOnToolsVersion = 10.2.1;

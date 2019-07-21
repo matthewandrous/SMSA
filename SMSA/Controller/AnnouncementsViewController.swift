@@ -13,6 +13,8 @@ import WebKit
 class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var announcementsTableView: UITableView!
+    
+    /*
     var webView: WKWebView?
     
     private var request : NSURLRequest {
@@ -20,6 +22,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         let URL = NSURL(string: baseUrl)!
         return NSURLRequest(url: URL as URL)
     }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         configuration.preferences = preferences
         
         /* Now instantiate the web view */
+        /*
         webView = WKWebView(frame: view.bounds, configuration: configuration)
         
         if let theWebView = webView {
@@ -46,6 +50,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
             theWebView.navigationDelegate = self
             view.addSubview(theWebView)
         }
+        */
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,9 +77,13 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        showTutorial(indexPath.row)
+        showTutorial(indexPath.row)
     }
     
+    /* Some non-working WKWebView Stuff */
+    /*
+     *
+     *
     /* Start the network activity indicator when the web view is loading */
     func webView(_ webView: WKWebView,
                  didStartProvisionalNavigation navigation: WKNavigation){
@@ -93,21 +102,32 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         decisionHandler(.allow)
     }
     
-    
-    
-//    func showTutorial(_ which: Int) {
-//        if let url = URL(string: (AnnouncementsModel.announcementsModel.announcementList[which]["link"] as? String)!) {
-//            let config = SFSafariViewController.Configuration()
-//
-//            let vc = SFSafariViewController(url: url, configuration: config)
-//            present(vc, animated: true) /*{
-//                var frame = vc.view.frame
-//                let OffsetY: CGFloat  = 535
-//                frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y - OffsetY)
-//                frame.size = CGSize(width: frame.width, height: frame.height + OffsetY)
-//                vc.view.frame = frame
-//            } */
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        
+//        if challenge.protectionSpace.host == "https://unimol.esse3.cineca.it/auth/Logon.do" {
+//            let user = "*******"
+//            let password = "******"
+//            let credential = URLCredential(user: user, password: password, persistence: URLCredential.Persistence.forSession)
+//            challenge.sender?.use(credential, for: challenge)
 //        }
-//    }
+    }
+    */
+    
+    
+    
+    func showTutorial(_ which: Int) {
+        if let url = URL(string: (AnnouncementsModel.announcementsModel.announcementList[which]["link"] as? String)!) {
+            let config = SFSafariViewController.Configuration()
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true) /*{
+                var frame = vc.view.frame
+                let OffsetY: CGFloat  = 535
+                frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y - OffsetY)
+                frame.size = CGSize(width: frame.width, height: frame.height + OffsetY)
+                vc.view.frame = frame
+            } */
+        }
+    }
 }
 
