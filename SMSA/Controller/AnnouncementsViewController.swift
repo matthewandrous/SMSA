@@ -53,7 +53,13 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
             let config = SFSafariViewController.Configuration()
             
             let vc = SFSafariViewController(url: url, configuration: config)
-            present(vc, animated: true)
+            present(vc, animated: true) /*{
+                var frame = vc.view.frame
+                let OffsetY: CGFloat  = 535
+                frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y - OffsetY)
+                frame.size = CGSize(width: frame.width, height: frame.height + OffsetY)
+                vc.view.frame = frame
+            } */
         }
     }
 }
