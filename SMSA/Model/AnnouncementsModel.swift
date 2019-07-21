@@ -28,7 +28,7 @@ class AnnouncementsModel {
             var myfeed = feed as! NSMutableDictionary
             var currAnnouncement = [String:Any]()
             currAnnouncement["title"] = myfeed["title"]
-            currAnnouncement["link"] = myfeed["lin"]
+            currAnnouncement["link"] = myfeed["link"]
             currAnnouncement["description"] = myfeed["description"]
             currAnnouncement["pubDate"] = myfeed["pubDate"]
             

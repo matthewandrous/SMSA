@@ -10,5 +10,6 @@ import UIKit
 
 class AnnouncementCell: UITableViewCell {
     @IBOutlet weak var announcementTitle: UILabel!
+    @IBOutlet weak var announcementImage: UIImageView!
     
 }

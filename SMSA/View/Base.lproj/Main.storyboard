@@ -39,25 +39,38 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Announcement" rowHeight="80" id="cV3-PN-ySq" customClass="AnnouncementCell" customModule="SMSA" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV3-PN-ySq" id="Awg-tG-5g1" customClass="AnnouncementCell" customModule="SMSA" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV3-PN-ySq" id="Awg-tG-5g1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YSC Competition Results" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo7-YW-bP9">
-                                                    <rect key="frame" x="192" y="11" width="202" height="58"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CrossRed" translatesAutoresizingMaskIntoConstraints="NO" id="7ZD-Eq-MC7">
+                                                    <rect key="frame" x="20" y="7" width="65.5" height="65.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="7ZD-Eq-MC7" secondAttribute="height" multiplier="1:1" id="6gt-am-CFe"/>
+                                                        <constraint firstAttribute="width" constant="65.5" id="cSf-Dp-2Yr"/>
+                                                        <constraint firstAttribute="height" constant="65.5" id="rpS-nB-kIZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t48-fR-MQb">
+                                                    <rect key="frame" x="93.5" y="8" width="301.5" height="63.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Jo7-YW-bP9" firstAttribute="top" secondItem="Awg-tG-5g1" secondAttribute="topMargin" id="Ar9-N3-VG5"/>
-                                                <constraint firstItem="Jo7-YW-bP9" firstAttribute="bottom" secondItem="Awg-tG-5g1" secondAttribute="bottomMargin" id="cf8-G8-gJF"/>
-                                                <constraint firstItem="Jo7-YW-bP9" firstAttribute="trailing" secondItem="Awg-tG-5g1" secondAttribute="trailingMargin" id="lnI-RB-rna"/>
+                                                <constraint firstItem="t48-fR-MQb" firstAttribute="leading" secondItem="7ZD-Eq-MC7" secondAttribute="trailing" constant="8" id="5qx-sF-eO3"/>
+                                                <constraint firstAttribute="bottom" secondItem="t48-fR-MQb" secondAttribute="bottom" constant="8" id="C7q-OA-xgd"/>
+                                                <constraint firstAttribute="bottom" secondItem="7ZD-Eq-MC7" secondAttribute="bottom" constant="7" id="DXn-RI-hTQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="t48-fR-MQb" secondAttribute="trailing" constant="19" id="GVN-7c-4h7"/>
+                                                <constraint firstItem="7ZD-Eq-MC7" firstAttribute="top" secondItem="Awg-tG-5g1" secondAttribute="top" constant="7" id="I7r-Rw-aj7"/>
+                                                <constraint firstItem="7ZD-Eq-MC7" firstAttribute="leading" secondItem="Awg-tG-5g1" secondAttribute="leading" constant="20" id="jne-Ue-sjJ"/>
+                                                <constraint firstItem="t48-fR-MQb" firstAttribute="top" secondItem="Awg-tG-5g1" secondAttribute="top" constant="8" id="mNh-dv-lw7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="announcementTitle" destination="Jo7-YW-bP9" id="rfb-5W-irD"/>
+                                            <outlet property="announcementImage" destination="7ZD-Eq-MC7" id="UaS-bY-SaW"/>
+                                            <outlet property="announcementTitle" destination="t48-fR-MQb" id="s2V-vm-rdH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="-320"/>
+            <point key="canvasLocation" x="1657.9710144927537" y="-320.08928571428572"/>
         </scene>
         <!--Sermons-->
         <scene sceneID="wg7-f3-ORb">
@@ -164,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CrossRed" width="988" height="989"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
