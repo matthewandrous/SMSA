@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */; };
+		0BD1FF78230B8C25008D190C /* LiveStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */; };
+		0BD1FF7A230B8D2F008D190C /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */; };
 		7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C77F22E26A5300895A58 /* AppDelegate.swift */; };
 		7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */; };
 		7F81C78422E26A5300895A58 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78322E26A5300895A58 /* SecondViewController.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		0B92D02922E3F50300999EBD /* SMSA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMSA.entitlements; sourceTree = "<group>"; };
+		0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
+		0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		7F81C77C22E26A5300895A58 /* SMSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F81C77F22E26A5300895A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 			children = (
 				7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */,
 				7F81C78322E26A5300895A58 /* SecondViewController.swift */,
+				0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */,
+				0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */,
 				0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */,
 			);
 			path = Controller;
@@ -310,7 +316,9 @@
 				0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */,
 				7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */,
 				7F81C78422E26A5300895A58 /* SecondViewController.swift in Sources */,
+				0BD1FF78230B8C25008D190C /* LiveStreamViewController.swift in Sources */,
 				7FDA68AD22E3C5D400536FBB /* AnnouncementsModel.swift in Sources */,
+				0BD1FF7A230B8D2F008D190C /* VideoTableViewCell.swift in Sources */,
 				7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */,
 				7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */,
 			);

@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="132" y="426.5" width="150.5" height="43"/>
+                                <rect key="frame" x="132" y="426.5" width="150" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="110" y="477.5" width="194.5" height="17"/>
+                                <rect key="frame" x="110" y="477.5" width="194" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="106.5" y="426.5" width="201.5" height="43"/>
+                                <rect key="frame" x="106" y="426.5" width="202" height="43"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -138,6 +138,63 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
+        <!--Live Streaming-->
+        <scene sceneID="Kk2-Kp-N9t">
+            <objects>
+                <viewController id="QOo-2y-U2c" customClass="LiveStreamViewController" customModule="SMSA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hic-6z-3TO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FF8-kF-Rlo">
+                                <rect key="frame" x="20" y="728" width="374" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Rzb-k1-diT"/>
+                                </constraints>
+                                <state key="normal" title="Open in YouTube"/>
+                                <connections>
+                                    <action selector="onOpenYouTube:" destination="QOo-2y-U2c" eventType="touchUpInside" id="Q05-fK-wVY"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZH-6i-f6u">
+                                <rect key="frame" x="0.0" y="140" width="414" height="219"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="2Fi-Z0-4eW"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OXH-Se-QFZ">
+                                <rect key="frame" x="197" y="239" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aZH-6i-f6u" firstAttribute="centerX" secondItem="FF8-kF-Rlo" secondAttribute="centerX" id="733-Ak-Of1"/>
+                            <constraint firstItem="aZH-6i-f6u" firstAttribute="leading" secondItem="hic-6z-3TO" secondAttribute="leading" id="9uE-gf-u03"/>
+                            <constraint firstAttribute="trailing" secondItem="aZH-6i-f6u" secondAttribute="trailing" id="DSy-ti-Kk3"/>
+                            <constraint firstItem="aZH-6i-f6u" firstAttribute="top" secondItem="6eq-rY-HPK" secondAttribute="top" id="HDd-JM-56f"/>
+                            <constraint firstItem="OXH-Se-QFZ" firstAttribute="centerX" secondItem="aZH-6i-f6u" secondAttribute="centerX" id="PT2-gP-u2V"/>
+                            <constraint firstItem="OXH-Se-QFZ" firstAttribute="centerY" secondItem="aZH-6i-f6u" secondAttribute="centerY" id="TZV-nV-j40"/>
+                            <constraint firstItem="6eq-rY-HPK" firstAttribute="bottom" secondItem="FF8-kF-Rlo" secondAttribute="bottom" constant="20" id="fuZ-dl-oB9"/>
+                            <constraint firstItem="FF8-kF-Rlo" firstAttribute="leading" secondItem="hic-6z-3TO" secondAttribute="leadingMargin" id="taE-fx-MJo"/>
+                            <constraint firstItem="OXH-Se-QFZ" firstAttribute="top" secondItem="6eq-rY-HPK" secondAttribute="top" constant="99" id="wkc-4p-BWq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6eq-rY-HPK"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Live Streaming" largeTitleDisplayMode="always" id="R2f-M1-wun"/>
+                    <connections>
+                        <outlet property="Activity" destination="OXH-Se-QFZ" id="YyY-CQ-p0l"/>
+                        <outlet property="videoWebView" destination="aZH-6i-f6u" id="Ten-PV-R8a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="brX-cH-uKx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700.0000000000002" y="1060.7142857142858"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -155,6 +212,7 @@
                     <connections>
                         <segue destination="ibg-sx-AHQ" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="Wau-DW-MD2" kind="relationship" relationship="viewControllers" id="sZY-cD-6ag"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -180,8 +238,28 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
+        <!--Live Streaming-->
+        <scene sceneID="Ew9-do-lof">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wau-DW-MD2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Live Streaming" image="livestream" selectedImage="livestream" id="VQw-AJ-asY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="iXR-ZN-2IN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QOo-2y-U2c" kind="relationship" relationship="rootViewController" id="m5o-QR-yH1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7h-1A-acp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="789.85507246376812" y="1060.7142857142858"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CrossRed" width="988" height="989"/>
+        <image name="livestream" width="25" height="25"/>
     </resources>
 </document>
