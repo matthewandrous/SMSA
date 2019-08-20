@@ -20,11 +20,13 @@ class AnnouncementsModel {
     
     func fetchAnnouncements(){
         
+        
+        fetchAllAnnouncements() //even tagged announcements will be fetched here, but with no tag
         fetchAnnouncementsWithTag(tag: "HS")
         fetchAnnouncementsWithTag(tag: "JHB")
         fetchAnnouncementsWithTag(tag: "JHG")
         fetchAnnouncementsWithTag(tag: "ELEM")
-        fetchAllAnnouncements()
+        
         
         announcementList.sort { ($0["pubDate"]! as! Date) > ($1["pubDate"]! as! Date) }
         removeDuplicates()
@@ -38,6 +40,7 @@ class AnnouncementsModel {
             print(i, i-1)
             if(i != 0){
                 if announcementList[i]["title"] as! String == announcementList[i-1]["title"] as! String{
+                    //delete the one that occurs first, since that will be the one without the tag
                     announcementList[i-1]["title"] = nil //we don't actually delete them because we are iterating over the array (more below)
                 }
             }
@@ -90,7 +93,7 @@ class AnnouncementsModel {
             currAnnouncement["description"] = myfeed["description"]
             currAnnouncement["pubDate"] = dateFormatter.date(from: (myfeed["pubDate"]!) )
             print(currAnnouncement["pubDate"]!)
-            currAnnouncement["tag"] = nil
+            currAnnouncement["tag"] = "none"
             
             announcementList.append(currAnnouncement)
         }

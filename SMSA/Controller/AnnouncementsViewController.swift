@@ -39,6 +39,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
         
+        
         /* Now instantiate the web view */
         /*
         webView = WKWebView(frame: view.bounds, configuration: configuration)
@@ -51,6 +52,12 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
             view.addSubview(theWebView)
         }
         */
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.announcementsTableView.indexPathForSelectedRow{
+            self.announcementsTableView.deselectRow(at: index, animated: true)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,8 +77,29 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         
         cell.announcementTitle?.text = AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["title"] as? String
         
-        cell.announcementImage?.image = #imageLiteral(resourceName: "CrossRed")
+        if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "HS" {
+            print("CHANGING IMAGE")
+            cell.announcementImage?.image = #imageLiteral(resourceName: "CrossGreen")
+        }
+        else if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "JHB" {
+            print("CHANGING IMAGE")
+            cell.announcementImage?.image = #imageLiteral(resourceName: "CrossBlue")
+        }
+        else if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "JHG" {
+            print("CHANGING IMAGE")
+            cell.announcementImage?.image = #imageLiteral(resourceName: "CrossPurple")
+        }
+        else if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "ELEM" {
+            print("CHANGING IMAGE")
+            cell.announcementImage?.image = #imageLiteral(resourceName: "CrossYellow")
+        }
+        else {
+            print("DEFAULT IMAGE")
+            cell.announcementImage?.image = #imageLiteral(resourceName: "CrossRed")
+        }
         cell.accessoryType = .disclosureIndicator
+        
+        
         
         return cell
     }

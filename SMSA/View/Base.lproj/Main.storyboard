@@ -94,7 +94,7 @@
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="-320.08928571428572"/>
         </scene>
-        <!--Sermons-->
+        <!--Second View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="SMSA" customModuleProvider="target" sceneMemberID="viewController">
@@ -132,7 +132,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sermons" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,6 +146,11 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.54362541440000001" green="0.1222083643" blue="0.082203246650000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="ibg-sx-AHQ" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -156,11 +161,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Announcements-->
+        <!--Navigation Controller-->
         <scene sceneID="Oow-gm-JwQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ibg-sx-AHQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Announcements" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dEI-IV-9tI">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -178,7 +183,5 @@
     </scenes>
     <resources>
         <image name="CrossRed" width="988" height="989"/>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
