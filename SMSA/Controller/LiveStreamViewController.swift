@@ -14,8 +14,11 @@ class LiveStreamViewController: UIViewController, WKUIDelegate, WKNavigationDele
     @IBOutlet weak var videoWebView: WKWebView!
     @IBOutlet weak var Activity: UIActivityIndicatorView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Live stream URL
         let url = URL(string: "https://www.youtube.com/embed/live_stream?channel=UC_eGnmI2MqiwOLncMVLKbOg")

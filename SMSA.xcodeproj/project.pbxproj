@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */; };
+		0BCF2CE32311E68900D9AF06 /* CalendarHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF2CE22311E68900D9AF06 /* CalendarHeaderCell.swift */; };
+		0BCF2CE52311E7A200D9AF06 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF2CE42311E7A200D9AF06 /* EventTableViewCell.swift */; };
+		0BCF2CE72311E84B00D9AF06 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF2CE62311E84B00D9AF06 /* CalendarViewController.swift */; };
 		0BD1FF78230B8C25008D190C /* LiveStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */; };
 		0BD1FF7A230B8D2F008D190C /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */; };
 		7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C77F22E26A5300895A58 /* AppDelegate.swift */; };
@@ -42,6 +45,9 @@
 /* Begin PBXFileReference section */
 		0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementCell.swift; sourceTree = "<group>"; };
 		0B92D02922E3F50300999EBD /* SMSA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMSA.entitlements; sourceTree = "<group>"; };
+		0BCF2CE22311E68900D9AF06 /* CalendarHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderCell.swift; sourceTree = "<group>"; };
+		0BCF2CE42311E7A200D9AF06 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		0BCF2CE62311E84B00D9AF06 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
 		0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		7F81C77C22E26A5300895A58 /* SMSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,10 +174,13 @@
 		7FDA68AB22E3C5A000536FBB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0BCF2CE62311E84B00D9AF06 /* CalendarViewController.swift */,
 				7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */,
 				7F81C78322E26A5300895A58 /* SecondViewController.swift */,
 				0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */,
 				0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */,
+				0BCF2CE42311E7A200D9AF06 /* EventTableViewCell.swift */,
+				0BCF2CE22311E68900D9AF06 /* CalendarHeaderCell.swift */,
 				0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */,
 			);
 			path = Controller;
@@ -313,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCF2CE72311E84B00D9AF06 /* CalendarViewController.swift in Sources */,
 				0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */,
 				7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */,
 				7F81C78422E26A5300895A58 /* SecondViewController.swift in Sources */,
@@ -321,6 +331,8 @@
 				0BD1FF7A230B8D2F008D190C /* VideoTableViewCell.swift in Sources */,
 				7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */,
 				7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */,
+				0BCF2CE52311E7A200D9AF06 /* EventTableViewCell.swift in Sources */,
+				0BCF2CE32311E68900D9AF06 /* CalendarHeaderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
