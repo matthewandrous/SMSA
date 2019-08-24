@@ -49,6 +49,7 @@ class LiveStreamViewController: UIViewController, WKUIDelegate, WKNavigationDele
     @IBAction func onOpenYouTube(_ sender: UIButton) {
         // LINK NOT WORKING
         let youtubeID = "UC_eGnmI2MqiwOLncMVLKbOg"
+        //out youtube channel ID: UC_eGnmI2MqiwOLncMVLKbOg
         
         // If YouTube is installed
         if let youtubeURL = URL(string: "youtube://\(youtubeID)"),
@@ -56,7 +57,7 @@ class LiveStreamViewController: UIViewController, WKUIDelegate, WKNavigationDele
             UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
         }
         // Otherwise, go to Safari
-        else if let youtubeURL = URL(string: "https://www.youtube.com/watch?v=\(youtubeID)") {
+        else if let youtubeURL = URL(string: "https://www.youtube.com/channel/\(youtubeID)") {
             UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
         }
     }
