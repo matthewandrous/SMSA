@@ -38,7 +38,7 @@ class CalendarViewController: UITableViewController {
         } else if (temp["type"] as! String == "event") {
             var eventCell = EventTableViewCell()
             eventCell = tableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! EventTableViewCell
-            eventCell.eventName.text = temp["calName"] as! String
+            eventCell.eventName.text = temp["title"] as! String
             eventCell.eventTime.text = String((temp["start"] as! String) + "–" + (temp["end"] as! String))
             
             return eventCell
