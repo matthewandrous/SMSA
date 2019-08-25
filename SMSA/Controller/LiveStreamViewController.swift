@@ -25,7 +25,7 @@ class LiveStreamViewController: UIViewController, WKUIDelegate, WKNavigationDele
         ContainerView.layer.shadowColor = UIColor.darkGray.cgColor
         ContainerView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         ContainerView.layer.shadowRadius = 25.0
-        ContainerView.layer.shadowOpacity = 0.9
+        ContainerView.layer.shadowOpacity = 0.5
         ContainerView.layer.shadowPath = UIBezierPath(roundedRect: videoWebView.bounds, cornerRadius: cornerRadius).cgPath
         videoWebView.layer.cornerRadius = cornerRadius
         videoWebView.clipsToBounds = true

@@ -17,7 +17,9 @@ class iCalParser{
     private init(){
         print("hello world")
         addUpcomingEventsFrom(url: "https://calendar.google.com/calendar/ical/st-athanasius.org_8b69l0kh8jgun6e2ja9cuk7k9g%40group.calendar.google.com/public/basic.ics", calName: "Liturgical Services")
-        addUpcomingEventsFrom(url: "https://calendar.google.com/calendar/ical/st-athanasius.org_frhtdi64stbshp3a6phcc10sds%40group.calendar.google.com/public/basic.ics", calName: "The Upper Room")
+        addUpcomingEventsFrom(url: "https://calendar.google.com/calendar/ical/st-athanasius.org_frhtdi64stbshp3a6phcc10sds%40group.calendar.google.com/public/basic.ics", calName: "The Upper Room College Meeting")
+        addUpcomingEventsFrom(url: "https://calendar.google.com/calendar/ical/st-athanasius.org_fgrkicacmu4lghh22tudfufg8c%40group.calendar.google.com/public/basic.ics", calName: "St. Moses Arabic Youth Meeting")
+        addUpcomingEventsFrom(url: "https://calendar.google.com/calendar/ical/st-athanasius.org_o1oq4dfbt5994n6uigck1s5svs%40group.calendar.google.com/public/basic.ics", calName: "Lazarus Project")
         addDates()
         printUpcomingEvents()
         printUpcomingEventsWithDates()
