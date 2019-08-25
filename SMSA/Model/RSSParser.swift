@@ -75,8 +75,8 @@ class RSSParser: NSObject, XMLParserDelegate {
             if fdate != "" {
                 elements.setObject(fdate, forKey: "pubDate" as NSCopying)
             }
-            print("adding feed")
-            print()
+//            print("adding feed")
+//            print()
             feeds.add(elements)
         }
     }
@@ -84,17 +84,17 @@ class RSSParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if element.isEqual(to: "title") {
             ftitle.append(string)
-            print(element)
+//            print(element)
         } else if element.isEqual(to: "link") {
             link.append(string)
-            print(element)
+//            print(element)
         } else if element.isEqual(to: "description") {
             fdescription.append(string)
-            print(element)
+//            print(element)
         } else if element.isEqual(to: "pubDate") {
             fdate.append(string)
         } else {
-            print(element)
+//            print(element)
         }
     }
 }

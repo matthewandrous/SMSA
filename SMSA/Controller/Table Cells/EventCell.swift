@@ -1,17 +1,18 @@
 //
-//  VideoTableViewCell.swift
-//  YoutubeEmbedApp
+//  EventCell.swift
+//  SMSA
 //
-//  Created by MAC on 6/1/19.
-//  Copyright © 2019 cagdaseksi. All rights reserved.
+//  Created by Pavly Habashy on 8/24/19.
+//  Copyright © 2019 SMSA Devs. All rights reserved.
 //
 
 import UIKit
 
-class VideoTableViewCell: UITableViewCell {
+class EventCell: UITableViewCell {
 
-    @IBOutlet weak var videoImage: UIImageView!
-    @IBOutlet weak var videoTitle: UILabel!
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventTime: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,5 @@ class VideoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

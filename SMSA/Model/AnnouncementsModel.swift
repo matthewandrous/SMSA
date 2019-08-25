@@ -15,7 +15,7 @@ class AnnouncementsModel {
     let announcementTags = ["HS", "JHB", "JHG", "ELEM"]
     
     private init(){
-        print("hello world")
+//        print("hello world")
     }
     
     func fetchAnnouncements(){
@@ -37,7 +37,7 @@ class AnnouncementsModel {
     //keeping our run-time at n
     func removeDuplicates(){
         for i in 0...announcementList.count-1{
-            print(i, i-1)
+//            print(i, i-1)
             if(i != 0){
                 if announcementList[i]["title"] as! String == announcementList[i-1]["title"] as! String{
                     //delete the one that occurs first, since that will be the one without the tag
@@ -59,7 +59,7 @@ class AnnouncementsModel {
         let myparser = RSSParser()
         myparser.initWithURL(URL(string: "https://www.st-athanasius.org/blogat?tag=" + tag + "&format=rss")!)
         //myparser.initWithURL(URL(string: "https://www.st-athanasius.org/blogat?format=rss")!)
-        print(myparser.feeds.count)
+//        print(myparser.feeds.count)
 
         for feed  in myparser.feeds {
             var myfeed = feed as! [String:String]
@@ -68,7 +68,7 @@ class AnnouncementsModel {
             currAnnouncement["link"] = myfeed["link"]
             currAnnouncement["description"] = myfeed["description"]
             currAnnouncement["pubDate"] = dateFormatter.date(from: (myfeed["pubDate"]!) )
-            print(currAnnouncement["pubDate"]!)
+//            print(currAnnouncement["pubDate"]!)
             currAnnouncement["tag"] = tag
 
             announcementList.append(currAnnouncement)
@@ -83,7 +83,7 @@ class AnnouncementsModel {
         let myparser = RSSParser()
         myparser.initWithURL(URL(string: "https://www.st-athanasius.org/blogat?format=rss")!)
         //myparser.initWithURL(URL(string: "https://www.st-athanasius.org/blogat?format=rss")!)
-        print(myparser.feeds.count)
+//        print(myparser.feeds.count)
         
         for feed  in myparser.feeds {
             var myfeed = feed as! [String:String]
@@ -92,7 +92,7 @@ class AnnouncementsModel {
             currAnnouncement["link"] = myfeed["link"]
             currAnnouncement["description"] = myfeed["description"]
             currAnnouncement["pubDate"] = dateFormatter.date(from: (myfeed["pubDate"]!) )
-            print(currAnnouncement["pubDate"]!)
+//            print(currAnnouncement["pubDate"]!)
             currAnnouncement["tag"] = "none"
             
             announcementList.append(currAnnouncement)

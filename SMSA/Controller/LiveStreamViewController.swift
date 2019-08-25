@@ -13,12 +13,32 @@ class LiveStreamViewController: UIViewController, WKUIDelegate, WKNavigationDele
     
     @IBOutlet weak var videoWebView: WKWebView!
     @IBOutlet weak var Activity: UIActivityIndicatorView!
+    @IBOutlet weak var ContainerView: UIView!
     
+    // Set corner radius
+    let cornerRadius : CGFloat = 25.0
     
+    fileprivate func setupWebViewContainer() {
+        
+        // Shadow and round corner Web View
+        ContainerView.layer.cornerRadius = cornerRadius
+        ContainerView.layer.shadowColor = UIColor.darkGray.cgColor
+        ContainerView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        ContainerView.layer.shadowRadius = 25.0
+        ContainerView.layer.shadowOpacity = 0.9
+        ContainerView.layer.shadowPath = UIBezierPath(roundedRect: videoWebView.bounds, cornerRadius: cornerRadius).cgPath
+        videoWebView.layer.cornerRadius = cornerRadius
+        videoWebView.clipsToBounds = true
+        videoWebView.scrollView.isScrollEnabled = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Hides the lines under the Navigation bar for a cleaner look (like Things)
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        setupWebViewContainer()
         
         // Live stream URL
         let url = URL(string: "https://www.youtube.com/embed/live_stream?channel=UC_eGnmI2MqiwOLncMVLKbOg")

@@ -61,7 +61,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("IN numberOfSection()")
+//        print("IN numberOfSection()")
         //return one section because we only have one section
         //this was a dumb comment in retrospect
         return 1
@@ -78,23 +78,23 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         cell.announcementTitle?.text = AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["title"] as? String
         
         if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "HS" {
-            print("CHANGING IMAGE")
+//            print("CHANGING IMAGE")
             cell.announcementImage?.image = #imageLiteral(resourceName: "CrossGreen")
         }
         else if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "JHB" {
-            print("CHANGING IMAGE")
+//            print("CHANGING IMAGE")
             cell.announcementImage?.image = #imageLiteral(resourceName: "CrossBlue")
         }
         else if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "JHG" {
-            print("CHANGING IMAGE")
+//            print("CHANGING IMAGE")
             cell.announcementImage?.image = #imageLiteral(resourceName: "CrossPurple")
         }
         else if AnnouncementsModel.announcementsModel.announcementList[indexPath.row]["tag"] as! String == "ELEM" {
-            print("CHANGING IMAGE")
+//            print("CHANGING IMAGE")
             cell.announcementImage?.image = #imageLiteral(resourceName: "CrossYellow")
         }
         else {
-            print("DEFAULT IMAGE")
+//            print("DEFAULT IMAGE")
             cell.announcementImage?.image = #imageLiteral(resourceName: "CrossRed")
         }
         cell.accessoryType = .disclosureIndicator
