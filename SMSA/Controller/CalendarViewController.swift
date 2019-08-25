@@ -14,6 +14,7 @@ class CalendarViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.rowHeight = 75
         tableView.allowsSelection = false
+        iCalParser.icp.doNothing()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -21,17 +22,26 @@ class CalendarViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return iCalParser.icp.upcomingEvents.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell: UITableViewCell
-        
-        if (indexPath.row == 0) {
-            cell = tableView.dequeueReusableCell(withIdentifier: "Header", for: indexPath) as! CalendarHeaderCell
-        } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! EventTableViewCell
+        var cell: UITableViewCell = UITableViewCell()
+        var temp = iCalParser.icp.upcomingEventsWithDates[indexPath.row]
+        if (temp["type"] as! String == "date") {
+            var dateCell = CalendarHeaderCell()
+            dateCell = tableView.dequeueReusableCell(withIdentifier: "Header", for: indexPath) as! CalendarHeaderCell
+            dateCell.weekDayLabel.text = (temp["day"] as! String)
+            dateCell.monthDayLabel.text = temp["date"] as! String
+            return dateCell
+        } else if (temp["type"] as! String == "event") {
+            var eventCell = EventTableViewCell()
+            eventCell = tableView.dequeueReusableCell(withIdentifier: "Event", for: indexPath) as! EventTableViewCell
+            eventCell.eventName.text = temp["calName"] as! String
+            eventCell.eventTime.text = String((temp["start"] as! String) + "–" + (temp["end"] as! String))
+            
+            return eventCell
         }
         
         return cell 

@@ -13,6 +13,11 @@
 		0BCF2CE72311E84B00D9AF06 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF2CE62311E84B00D9AF06 /* CalendarViewController.swift */; };
 		0BD1FF78230B8C25008D190C /* LiveStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */; };
 		0BD1FF7A230B8D2F008D190C /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */; };
+		7F20ECFB2311F4EC00FB7DF8 /* iCal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECF62311F4EC00FB7DF8 /* iCal.swift */; };
+		7F20ECFC2311F4EC00FB7DF8 /* XCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECF72311F4EC00FB7DF8 /* XCalendar.swift */; };
+		7F20ECFD2311F4EC00FB7DF8 /* XEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECF82311F4EC00FB7DF8 /* XEvent.swift */; };
+		7F20ECFE2311F4EC00FB7DF8 /* iCalParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */; };
+		7F20ECFF2311F4EC00FB7DF8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECFA2311F4EC00FB7DF8 /* Parser.swift */; };
 		7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C77F22E26A5300895A58 /* AppDelegate.swift */; };
 		7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */; };
 		7F81C78422E26A5300895A58 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78322E26A5300895A58 /* SecondViewController.swift */; };
@@ -50,6 +55,11 @@
 		0BCF2CE62311E84B00D9AF06 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
 		0BD1FF79230B8D2F008D190C /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		7F20ECF62311F4EC00FB7DF8 /* iCal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCal.swift; sourceTree = "<group>"; };
+		7F20ECF72311F4EC00FB7DF8 /* XCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCalendar.swift; sourceTree = "<group>"; };
+		7F20ECF82311F4EC00FB7DF8 /* XEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEvent.swift; sourceTree = "<group>"; };
+		7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCalParser.swift; sourceTree = "<group>"; };
+		7F20ECFA2311F4EC00FB7DF8 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		7F81C77C22E26A5300895A58 /* SMSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F81C77F22E26A5300895A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +108,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F20ECF52311F4EC00FB7DF8 /* iCal Parser */ = {
+			isa = PBXGroup;
+			children = (
+				7F20ECF62311F4EC00FB7DF8 /* iCal.swift */,
+				7F20ECF72311F4EC00FB7DF8 /* XCalendar.swift */,
+				7F20ECF82311F4EC00FB7DF8 /* XEvent.swift */,
+				7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */,
+				7F20ECFA2311F4EC00FB7DF8 /* Parser.swift */,
+			);
+			path = "iCal Parser";
 			sourceTree = "<group>";
 		};
 		7F81C77322E26A5300895A58 = {
@@ -156,6 +178,7 @@
 		7FDA68A922E3C58E00536FBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F20ECF52311F4EC00FB7DF8 /* iCal Parser */,
 				7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */,
 				7FDA68AE22E3C5E800536FBB /* RSSParser.swift */,
 			);
@@ -324,13 +347,18 @@
 			files = (
 				0BCF2CE72311E84B00D9AF06 /* CalendarViewController.swift in Sources */,
 				0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */,
+				7F20ECFB2311F4EC00FB7DF8 /* iCal.swift in Sources */,
 				7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */,
+				7F20ECFF2311F4EC00FB7DF8 /* Parser.swift in Sources */,
 				7F81C78422E26A5300895A58 /* SecondViewController.swift in Sources */,
+				7F20ECFD2311F4EC00FB7DF8 /* XEvent.swift in Sources */,
 				0BD1FF78230B8C25008D190C /* LiveStreamViewController.swift in Sources */,
 				7FDA68AD22E3C5D400536FBB /* AnnouncementsModel.swift in Sources */,
 				0BD1FF7A230B8D2F008D190C /* VideoTableViewCell.swift in Sources */,
 				7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */,
+				7F20ECFC2311F4EC00FB7DF8 /* XCalendar.swift in Sources */,
 				7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */,
+				7F20ECFE2311F4EC00FB7DF8 /* iCalParser.swift in Sources */,
 				0BCF2CE52311E7A200D9AF06 /* EventTableViewCell.swift in Sources */,
 				0BCF2CE32311E68900D9AF06 /* CalendarHeaderCell.swift in Sources */,
 			);

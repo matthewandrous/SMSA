@@ -59,7 +59,7 @@ class LiveStreamViewController: UIViewController, WKUIDelegate, WKNavigationDele
             UIApplication.shared.canOpenURL(youtubeURL) {
             UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
         }
-        // Otherwise, go to Safari
+            // Otherwise, go to Safari
         else if let youtubeURL = URL(string: "https://www.youtube.com/channel/\(youtubeID)") {
             UIApplication.shared.open(youtubeURL, options: [:], completionHandler: nil)
         }
