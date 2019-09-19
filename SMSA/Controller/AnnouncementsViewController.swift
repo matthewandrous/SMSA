@@ -39,19 +39,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
         
-        
-        /* Now instantiate the web view */
-        /*
-        webView = WKWebView(frame: view.bounds, configuration: configuration)
-        
-        if let theWebView = webView {
-            /* Load a web page into our web view */
-            let urlRequest = self.request
-            theWebView.load(urlRequest as URLRequest)
-            theWebView.navigationDelegate = self
-            view.addSubview(theWebView)
-        }
-        */
+        iCalParser.icp.doNothing()
     }
     
     override func viewWillAppear(_ animated: Bool) {

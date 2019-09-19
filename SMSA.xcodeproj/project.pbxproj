@@ -19,9 +19,12 @@
 		7F20ECFD2311F4EC00FB7DF8 /* XEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECF82311F4EC00FB7DF8 /* XEvent.swift */; };
 		7F20ECFE2311F4EC00FB7DF8 /* iCalParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */; };
 		7F20ECFF2311F4EC00FB7DF8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ECFA2311F4EC00FB7DF8 /* Parser.swift */; };
+		7F20ED032316053400FB7DF8 /* SermonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F20ED022316053400FB7DF8 /* SermonsModel.swift */; };
+		7F279FC8233158F50074D8D0 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F279FC7233158F50074D8D0 /* NowPlayingViewController.swift */; };
+		7F279FCA2332F5330074D8D0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F279FC92332F5330074D8D0 /* CustomSlider.swift */; };
 		7F81C78022E26A5300895A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C77F22E26A5300895A58 /* AppDelegate.swift */; };
 		7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */; };
-		7F81C78422E26A5300895A58 /* SermonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78322E26A5300895A58 /* SermonsViewController.swift */; };
+		7F81C78422E26A5300895A58 /* SermonsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C78322E26A5300895A58 /* SermonsTableViewController.swift */; };
 		7F81C78722E26A5300895A58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F81C78522E26A5300895A58 /* Main.storyboard */; };
 		7F81C78922E26A5400895A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F81C78822E26A5400895A58 /* Assets.xcassets */; };
 		7F81C78C22E26A5400895A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F81C78A22E26A5400895A58 /* LaunchScreen.storyboard */; };
@@ -62,10 +65,13 @@
 		7F20ECF82311F4EC00FB7DF8 /* XEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XEvent.swift; sourceTree = "<group>"; };
 		7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCalParser.swift; sourceTree = "<group>"; };
 		7F20ECFA2311F4EC00FB7DF8 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		7F20ED022316053400FB7DF8 /* SermonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonsModel.swift; sourceTree = "<group>"; };
+		7F279FC7233158F50074D8D0 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
+		7F279FC92332F5330074D8D0 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		7F81C77C22E26A5300895A58 /* SMSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F81C77F22E26A5300895A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.xcfilelist; };
 		7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsViewController.swift; sourceTree = "<group>"; };
-		7F81C78322E26A5300895A58 /* SermonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonsViewController.swift; sourceTree = "<group>"; };
+		7F81C78322E26A5300895A58 /* SermonsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonsTableViewController.swift; sourceTree = "<group>"; };
 		7F81C78622E26A5300895A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F81C78822E26A5400895A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F81C78B22E26A5400895A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -193,6 +199,7 @@
 				7F20ECF52311F4EC00FB7DF8 /* iCal Parser */,
 				7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */,
 				7FDA68AE22E3C5E800536FBB /* RSSParser.swift */,
+				7F20ED022316053400FB7DF8 /* SermonsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,8 +221,10 @@
 				0B055B6C23121D8C00F30A6B /* Table Cells */,
 				7F81C78122E26A5300895A58 /* AnnouncementsViewController.swift */,
 				0BCF2CE62311E84B00D9AF06 /* CalendarViewController.swift */,
-				7F81C78322E26A5300895A58 /* SermonsViewController.swift */,
+				7F81C78322E26A5300895A58 /* SermonsTableViewController.swift */,
 				0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */,
+				7F279FC7233158F50074D8D0 /* NowPlayingViewController.swift */,
+				7F279FC92332F5330074D8D0 /* CustomSlider.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -359,12 +368,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCF2CE72311E84B00D9AF06 /* CalendarViewController.swift in Sources */,
+				7F279FCA2332F5330074D8D0 /* CustomSlider.swift in Sources */,
 				0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */,
 				7F20ECFB2311F4EC00FB7DF8 /* iCal.swift in Sources */,
 				7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */,
 				7F20ECFF2311F4EC00FB7DF8 /* Parser.swift in Sources */,
+				7F20ED032316053400FB7DF8 /* SermonsModel.swift in Sources */,
 				0B055B7323122B3400F30A6B /* EventCell.swift in Sources */,
-				7F81C78422E26A5300895A58 /* SermonsViewController.swift in Sources */,
+				7F279FC8233158F50074D8D0 /* NowPlayingViewController.swift in Sources */,
+				7F81C78422E26A5300895A58 /* SermonsTableViewController.swift in Sources */,
 				7F20ECFD2311F4EC00FB7DF8 /* XEvent.swift in Sources */,
 				0BD1FF78230B8C25008D190C /* LiveStreamViewController.swift in Sources */,
 				7FDA68AD22E3C5D400536FBB /* AnnouncementsModel.swift in Sources */,

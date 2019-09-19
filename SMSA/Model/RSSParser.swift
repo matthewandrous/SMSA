@@ -17,6 +17,7 @@ class RSSParser: NSObject, XMLParserDelegate {
     var ftitle = NSMutableString()
     var link = NSMutableString()
     var img:  [AnyObject] = []
+    var img2:  [AnyObject] = []
     var fdescription = NSMutableString()
     var fdate = NSMutableString()
     
@@ -31,7 +32,7 @@ class RSSParser: NSObject, XMLParserDelegate {
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
         parser.shouldProcessNamespaces = false
-        parser.shouldReportNamespacePrefixes = false
+        parser.shouldReportNamespacePrefixes = true
         parser.shouldResolveExternalEntities = false
         parser.parse()
     }
@@ -42,6 +43,8 @@ class RSSParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName as NSString
+        print("1")
+        print(element)
         if (element as NSString).isEqual(to: "item") {
             elements =  NSMutableDictionary()
             elements = [:]
@@ -54,14 +57,21 @@ class RSSParser: NSObject, XMLParserDelegate {
             fdate = NSMutableString()
             fdate = ""
         } else if (element as NSString).isEqual(to: "enclosure") {
+            print(attributeDict["url"])
             if let urlString = attributeDict["url"] {
                 img.append(urlString as AnyObject)
+            }
+        } else if (element as NSString).isEqual(to: "itunes:image") {
+            print(attributeDict["href"])
+            if let urlString = attributeDict["href"] {
+                img2.append(urlString as AnyObject)
             }
         }
     }
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        
+        print("2")
+        print(elementName)
         if (elementName as NSString).isEqual(to: "item") {
             if ftitle != "" {
                 elements.setObject(ftitle, forKey: "title" as NSCopying)
@@ -93,8 +103,12 @@ class RSSParser: NSObject, XMLParserDelegate {
 //            print(element)
         } else if element.isEqual(to: "pubDate") {
             fdate.append(string)
-        } else {
-//            print(element)
+        }
+        else if element.isEqual(to: "enclosure"){
+            print(string)
+        }
+        else if element.isEqual(to: "itunes:image"){
+            print(string)
         }
     }
 }

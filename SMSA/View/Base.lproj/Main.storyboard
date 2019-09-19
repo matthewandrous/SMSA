@@ -94,35 +94,6 @@
             </objects>
             <point key="canvasLocation" x="1658" y="-1010"/>
         </scene>
-        <!--Sermons-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="SMSA" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Coming Soon" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="102.5" y="426.5" width="209" height="43"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Sermons" id="5lw-dz-Va7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1657.9710144927537" y="368.97321428571428"/>
-        </scene>
         <!--Calendar-->
         <scene sceneID="iie-aB-Lsa">
             <objects>
@@ -155,6 +126,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="keS-nB-Z2v"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Open in YouTube"/>
                                 <connections>
                                     <action selector="onOpenYouTube:" destination="QOo-2y-U2c" eventType="touchUpInside" id="Q05-fK-wVY"/>
@@ -300,7 +272,7 @@
         <!--Sermons-->
         <scene sceneID="FOl-CZ-9n5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wCK-kE-MlL" sceneMemberID="viewController">
+                <navigationController title="Sermons" automaticallyAdjustsScrollViewInsets="NO" id="wCK-kE-MlL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Sermons" image="mic" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Ca9-oj-wkh">
@@ -309,12 +281,113 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="bzc-D7-NAD"/>
+                        <segue destination="RiC-eo-zRh" kind="relationship" relationship="rootViewController" id="tyD-PS-qUb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCZ-OX-cUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="747.82608695652175" y="368.97321428571428"/>
+            <point key="canvasLocation" x="748" y="341"/>
+        </scene>
+        <!--Sermons Table View Controller-->
+        <scene sceneID="H6c-bI-CO6">
+            <objects>
+                <tableViewController title="Sermons" id="RiC-eo-zRh" userLabel="Sermons Table View Controller" customClass="SermonsTableViewController" customModule="SMSA" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4YJ-8z-pQi" userLabel="Sermons Table View">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Sermon" id="u1s-fq-l6Y">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Sermon" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u1s-fq-l6Y" id="OkG-IP-g2X">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RiC-eo-zRh" id="de0-TU-B6h"/>
+                            <outlet property="delegate" destination="RiC-eo-zRh" id="ucl-g0-QEU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sermons" id="Uh1-LZ-7cF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="32m-Uq-AK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="341"/>
+        </scene>
+        <!--Now Playing View Controller-->
+        <scene sceneID="Aum-C7-tzk">
+            <objects>
+                <viewController storyboardIdentifier="NowPlayingVC" id="TIQ-Vm-8kk" customClass="NowPlayingViewController" customModule="SMSA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NBU-Qr-Qm0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKS-gh-XrB">
+                                <rect key="frame" x="157" y="622" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <color key="tintColor" red="0.54362541440000001" green="0.1222083643" blue="0.082203246650000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="PlayPausePressed:" destination="TIQ-Vm-8kk" eventType="touchUpInside" id="Tho-AX-mjf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97M-6j-YO4" userLabel="Skip Forward Button">
+                                <rect key="frame" x="265" y="622" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <color key="tintColor" red="0.54362541440000001" green="0.1222083643" blue="0.082203246650000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="PlayPausePressed:" destination="TIQ-Vm-8kk" eventType="touchUpInside" id="TJN-mW-2yv"/>
+                                    <action selector="SkipForwardPressed:" destination="TIQ-Vm-8kk" eventType="touchUpInside" id="3IR-UI-Wxq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9en-D5-XZh" userLabel="Skip Backward Button">
+                                <rect key="frame" x="49" y="622" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <color key="tintColor" red="0.54362541440000001" green="0.1222083643" blue="0.082203246650000006" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="PlayPausePressed:" destination="TIQ-Vm-8kk" eventType="touchUpInside" id="iuD-cP-To4"/>
+                                    <action selector="SkipBackPressed:" destination="TIQ-Vm-8kk" eventType="touchUpInside" id="uVW-rM-Qg1"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WcX-bT-tBz" userLabel="Art Image">
+                                <rect key="frame" x="53" y="105" width="309" height="309"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="KK3-Kf-Fmb"/>
+                    </view>
+                    <connections>
+                        <outlet property="PlayPauseButton" destination="CKS-gh-XrB" id="FL5-9u-Yuw"/>
+                        <outlet property="SkipBackButton" destination="9en-D5-XZh" id="SFe-my-45K"/>
+                        <outlet property="SkipForwardButton" destination="97M-6j-YO4" id="fyo-9O-C9n"/>
+                        <outlet property="artImageView" destination="WcX-bT-tBz" id="05x-wP-syV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YBE-Ok-hOP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2713.04347826087" y="340.84821428571428"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uvN-Hw-8o2">
+            <objects>
+                <viewController id="QhE-px-Tj4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P5Y-1a-Oce">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Mw-yS-iFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
