@@ -15,12 +15,15 @@ class NowPlayingViewController: UIViewController {
     @IBOutlet weak var SkipBackButton: UIButton!
     @IBOutlet weak var PlayPauseButton: UIButton!
     @IBOutlet weak var artImageView: UIImageView!
+    @IBOutlet weak var playbackSlider: CustomSlider!
+    @IBOutlet weak var progressLabel: UILabel!
+    @IBOutlet weak var timeLeftLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     var playerItem: AVPlayerItem?
     var player: AVPlayer?
-    var playbackSlider: CustomSlider?
-    var progressLabel: UILabel?
-    var timeLeftLabel: UILabel?
+
     let seekDuration: Float64 = 10
     
     override func viewDidLoad() {
@@ -41,42 +44,41 @@ class NowPlayingViewController: UIViewController {
             }
         }
         
+        //Setting title and description
+        let text = (SermonsModel.sermonsModel.selectedSermon["title"] as! String).components(separatedBy: "|")
+        titleLabel.text = text[0]
+        descriptionLabel.text = text[1]
         
-        PlayPauseButton.setImage(UIImage(named: "checkmark_white"), for: .normal)
-        PlayPauseButton.contentVerticalAlignment = .fill
-        PlayPauseButton.contentHorizontalAlignment = .fill
-        PlayPauseButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        PlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
-        
-        SkipForwardButton.setImage(UIImage(named: "checkmark_white"), for: .normal)
-        SkipForwardButton.contentVerticalAlignment = .fill
-        SkipForwardButton.contentHorizontalAlignment = .fill
-        SkipForwardButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        SkipForwardButton.setImage(#imageLiteral(resourceName: "forward_10"), for: UIControl.State.normal)
-        
-        SkipBackButton.setImage(UIImage(named: "checkmark_white"), for: .normal)
-        SkipBackButton.contentVerticalAlignment = .fill
-        SkipBackButton.contentHorizontalAlignment = .fill
-        SkipBackButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        SkipBackButton.setImage(#imageLiteral(resourceName: "replay_10"), for: UIControl.State.normal)
+        //setting Pause and Play Buttons
+//        PlayPauseButton.setImage(UIImage(named: "checkmark_white"), for: .normal)
+//        PlayPauseButton.contentVerticalAlignment = .fill
+//        PlayPauseButton.contentHorizontalAlignment = .fill
+//        PlayPauseButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        PlayPauseButton.setBackgroundImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
+//
+//        SkipForwardButton.setImage(UIImage(named: "checkmark_white"), for: .normal)
+//        SkipForwardButton.contentVerticalAlignment = .fill
+//        SkipForwardButton.contentHorizontalAlignment = .fill
+//        SkipForwardButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        SkipForwardButton.setBackgroundImage(#imageLiteral(resourceName: "forward_10"), for: UIControl.State.normal)
+//
+//        SkipBackButton.setImage(UIImage(named: "checkmark_white"), for: .normal)
+//        SkipBackButton.contentVerticalAlignment = .fill
+//        SkipBackButton.contentHorizontalAlignment = .fill
+//        SkipBackButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        SkipBackButton.setBackgroundImage(#imageLiteral(resourceName: "replay_10"), for: UIControl.State.normal)
         
         
         // Add playback slider
-        let playbackSliderX = UIScreen.main.bounds.size.width*0.5 - 150
-        let playbackSliderY = UIScreen.main.bounds.size.height*0.6
-        playbackSlider = CustomSlider(frame:CGRect(x:playbackSliderX, y:playbackSliderY, width:300, height:20))
         playbackSlider!.minimumValue = 0
-        
         
         let duration : CMTime = playerItem!.asset.duration
         let seconds : Float64 = CMTimeGetSeconds(duration)
         
         playbackSlider!.maximumValue = Float(seconds)
         playbackSlider!.isContinuous = true
-        playbackSlider!.tintColor = UIColor.red
         
         playbackSlider!.addTarget(self, action: #selector(NowPlayingViewController.playbackSliderValueChanged(_:)), for: .valueChanged)
-        // playbackSlider.addTarget(self, action: "playbackSliderValueChanged:", forControlEvents: .ValueChanged)
         self.view.addSubview(playbackSlider!)
         
         player!.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
@@ -86,7 +88,7 @@ class NowPlayingViewController: UIViewController {
 //                if true {
             var progress = (self.player?.currentItem?.currentTime().seconds)!
             self.playbackSlider?.value = Float(progress)
-            self.progressLabel?.text = self.SecondsToHoursMinutesSeconds(secondsDouble: progress)
+            self.progressLabel?.text = "hello" //self.SecondsToHoursMinutesSeconds(secondsDouble: progress)
             self.timeLeftLabel?.text = self.SecondsToHoursMinutesSeconds(secondsDouble:(Double(duration.seconds) - progress))
             print(progress)
             //self.updatedPlaybackSlider(progress: progress)
@@ -95,24 +97,28 @@ class NowPlayingViewController: UIViewController {
         })
         
         //Add Audio timestamps
-        let progressLabelX = UIScreen.main.bounds.size.width*0.15
-        let progressLabelY = UIScreen.main.bounds.size.height*0.65
-        progressLabel = UILabel(frame: CGRect(x:progressLabelX, y:progressLabelY, width:80, height:20))
-        progressLabel?.text = "-"
-        self.view.addSubview(progressLabel!)
-        
-        let timeLeftLabelX = UIScreen.main.bounds.size.width*0.85-20
-        let timeLeftLabelY = UIScreen.main.bounds.size.height*0.65
-        timeLeftLabel = UILabel(frame: CGRect(x:timeLeftLabelX, y:timeLeftLabelY, width:80, height:20))
-        timeLeftLabel?.text = "-"
-        self.view.addSubview(timeLeftLabel!)
+//        let progressLabelX = UIScreen.main.bounds.size.width*0.15
+//        let progressLabelY = UIScreen.main.bounds.size.height*0.65
+//        progressLabel = UILabel(frame: CGRect(x:progressLabelX, y:progressLabelY, width:80, height:20))
+//        progressLabel?.text = "-"
+//        self.view.addSubview(progressLabel!)
+//
+//        let timeLeftLabelX = UIScreen.main.bounds.size.width*0.85-20
+//        let timeLeftLabelY = UIScreen.main.bounds.size.height*0.65
+//        timeLeftLabel = UILabel(frame: CGRect(x:timeLeftLabelX, y:timeLeftLabelY, width:80, height:20))
+//        timeLeftLabel?.text = "-"
+//        self.view.addSubview(timeLeftLabel!)
         
         
         //Add AirPlay picker
         let audioPickerX = UIScreen.main.bounds.size.width*0.5 - 10
-        let audioPickerY = UIScreen.main.bounds.size.height*0.9
+        let audioPickerY = UIScreen.main.bounds.size.height*0.86
         let audioPicker = AVRoutePickerView(frame: CGRect(x:audioPickerX, y:audioPickerY, width:20, height:20))
+        audioPicker.tintColor = UIColor(cgColor: PlayPauseButton.tintColor.cgColor) //same color as play button
         self.view.addSubview(audioPicker)
+        
+        //and grabby handle thingy at the top
+        
         
     }
     
@@ -131,7 +137,7 @@ class NowPlayingViewController: UIViewController {
         
         if player!.rate == 0
         {
-            player?.play()
+            play()
         }
     }
     
@@ -147,17 +153,15 @@ class NowPlayingViewController: UIViewController {
         
         playerLayer.frame = CGRect(x: 0, y: 0, width: 10, height: 50)
         self.view.layer.addSublayer(playerLayer)
-        player!.play()
+        play()
         
     }
     
     @IBAction func PlayPausePressed(_ sender: Any) {
         if player?.rate == 0.0 {
-            player!.play()
-            PlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
+            play()
         } else {
-            player!.pause()
-            PlayPauseButton.setImage(#imageLiteral(resourceName: "play"), for: UIControl.State.normal)
+            pause()
         }
     }
     
@@ -170,9 +174,18 @@ class NowPlayingViewController: UIViewController {
         }
         let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
         player!.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-        player?.play()
-        PlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
+        play()
         
+    }
+    
+    func play(){
+        player?.play()
+        PlayPauseButton.setBackgroundImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
+    }
+    
+    func pause(){
+        player?.pause()
+        PlayPauseButton.setBackgroundImage(#imageLiteral(resourceName: "play"), for: UIControl.State.normal)
     }
     
     @IBAction func SkipForwardPressed(_ sender: Any) {
@@ -186,8 +199,7 @@ class NowPlayingViewController: UIViewController {
             
             let time2: CMTime = CMTimeMake(value: Int64(newTime * 1000 as Float64), timescale: 1000)
             player!.seek(to: time2, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero)
-            player!.play()
-            PlayPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
+            play()
             
         }
         

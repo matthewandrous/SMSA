@@ -30,6 +30,7 @@
 		7F81C78C22E26A5400895A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F81C78A22E26A5400895A58 /* LaunchScreen.storyboard */; };
 		7F81C79722E26A5400895A58 /* SMSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C79622E26A5400895A58 /* SMSATests.swift */; };
 		7F81C7A222E26A5400895A58 /* SMSAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C7A122E26A5400895A58 /* SMSAUITests.swift */; };
+		7FB870B82334657E008C7727 /* SermonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB870B72334657E008C7727 /* SermonTableViewCell.swift */; };
 		7FDA68AD22E3C5D400536FBB /* AnnouncementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */; };
 		7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA68AE22E3C5E800536FBB /* RSSParser.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		7F81C79D22E26A5400895A58 /* SMSAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMSAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F81C7A122E26A5400895A58 /* SMSAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSAUITests.swift; sourceTree = "<group>"; };
 		7F81C7A322E26A5400895A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FB870B72334657E008C7727 /* SermonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonTableViewCell.swift; sourceTree = "<group>"; };
 		7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsModel.swift; sourceTree = "<group>"; };
 		7FDA68AE22E3C5E800536FBB /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				0B055B7123122B3400F30A6B /* EventCell.swift */,
 				0B1F12B822E27A150062BDDB /* AnnouncementCell.swift */,
 				0B055B6D2312277700F30A6B /* HeaderCell.swift */,
+				7FB870B72334657E008C7727 /* SermonTableViewCell.swift */,
 			);
 			path = "Table Cells";
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 			files = (
 				0BCF2CE72311E84B00D9AF06 /* CalendarViewController.swift in Sources */,
 				7F279FCA2332F5330074D8D0 /* CustomSlider.swift in Sources */,
+				7FB870B82334657E008C7727 /* SermonTableViewCell.swift in Sources */,
 				0B1F12B922E27A150062BDDB /* AnnouncementCell.swift in Sources */,
 				7F20ECFB2311F4EC00FB7DF8 /* iCal.swift in Sources */,
 				7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */,

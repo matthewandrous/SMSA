@@ -26,10 +26,13 @@ class SermonsTableViewController: UITableViewController {
         return SermonsModel.sermonsModel.sermonList.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.accessoryType = .detailButton
-        cell.textLabel?.text = SermonsModel.sermonsModel.sermonList[indexPath.row]["title"] as! String
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> SermonTableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Sermon", for: indexPath) as! SermonTableViewCell
+        var x = (SermonsModel.sermonsModel.sermonList[indexPath.row]["title"] as! String)
+        var y = x.components(separatedBy: "|")
+        
+        cell.titleLabel!.text = y[0]
+        cell.descriptionLabel!.text = y[1]
         return cell
     }
     
