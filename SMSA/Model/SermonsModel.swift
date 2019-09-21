@@ -13,13 +13,27 @@ class SermonsModel {
     static let sermonsModel = SermonsModel.init()
     var sermonList = [[String:Any]]()
     var selectedSermon = [String:Any]()
+    var selectedSermonIndex: Int?
+    var lastSelectedSermonIndex: Int?
+    var lastProgress: Double?
+    var sameSermonSelected = false
     
     private init(){
         //        print("hello world")
     }
     
     func selectSermon(index: Int){
+        print("selectSermon called")
+        lastSelectedSermonIndex = selectedSermonIndex
+        selectedSermonIndex = index
         selectedSermon = sermonList[index]
+        
+        if lastSelectedSermonIndex == selectedSermonIndex {
+            print("they selected the same one!")
+            sameSermonSelected = true
+        } else {
+            sameSermonSelected = false
+        }
     }
     
     func fetchSermons(){

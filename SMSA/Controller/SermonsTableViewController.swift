@@ -38,6 +38,7 @@ class SermonsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showTutorial(indexPath.row)
+        tableView.cellForRow(at: indexPath)?.accessoryType = .detailButton
     }
     
     
@@ -47,18 +48,6 @@ class SermonsTableViewController: UITableViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "NowPlayingVC")
         newViewController.modalPresentationStyle = .popover
         self.present(newViewController, animated: true, completion: nil)
-//        if let url = URL(string: (SermonsModel.sermonsModel.sermonList[which]["url"] as? String)!) {
-//            let config = SFSafariViewController.Configuration()
-//
-//            let vc = SFSafariViewController(url: url, configuration: config)
-//            present(vc, animated: true) /*{
-//             var frame = vc.view.frame
-//             let OffsetY: CGFloat  = 535
-//             frame.origin = CGPoint(x: frame.origin.x, y: frame.origin.y - OffsetY)
-//             frame.size = CGSize(width: frame.width, height: frame.height + OffsetY)
-//             vc.view.frame = frame
-//             } */
-//        }
     }
 
 }
