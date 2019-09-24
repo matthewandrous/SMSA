@@ -39,7 +39,23 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
         
-        iCalParser.icp.doNothing()
+        
+        //starting Calendar parsing in a seperate thread
+        DispatchQueue.global().async {
+            //iCalParser.icp.doNothing()
+            DispatchQueue.main.async {
+                //nothing
+            }
+        }
+        
+        //starting Sermons parsing in a seperate thread
+        DispatchQueue.global().async {
+            //SermonsModel.sermonsModel.test()
+            DispatchQueue.main.async {
+                //nothing
+            }
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

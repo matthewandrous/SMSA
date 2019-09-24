@@ -27,7 +27,7 @@ class CalendarViewController: UITableViewController {
         tableView.allowsSelection = false
         
         // TODO
-        iCalParser.icp.doNothing()
+        //iCalParser.icp.doNothing()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

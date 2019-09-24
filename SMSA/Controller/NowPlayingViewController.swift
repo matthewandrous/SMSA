@@ -93,7 +93,7 @@ class NowPlayingViewController: UIViewController {
         let audioPickerY = UIScreen.main.bounds.size.height*0.86
         let audioPicker = AVRoutePickerView(frame: CGRect(x:audioPickerX, y:audioPickerY, width:20, height:20))
         audioPicker.tintColor = UIColor(cgColor: PlayPauseButton.tintColor.cgColor) //same color as play button
-        self.view.addSubview(audioPicker)
+        //self.view.addSubview(audioPicker)
         
         
         //set up media player and lockscreen controls
@@ -114,17 +114,12 @@ class NowPlayingViewController: UIViewController {
             }
 
             let action2 = UIAlertAction(title: "No", style: .cancel) { (action:UIAlertAction) in
-                print("You've pressed cancel");
-                
+                //do nothing
             }
 
-            let action3 = UIAlertAction(title: "Destructive", style: .destructive) { (action:UIAlertAction) in
-                print("You've pressed the destructive");
-            }
 
             alertController.addAction(action1)
             alertController.addAction(action2)
-            alertController.addAction(action3)
             self.present(alertController, animated: true, completion: nil)
         }
     }
