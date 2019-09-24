@@ -31,6 +31,7 @@
 		7F81C79722E26A5400895A58 /* SMSATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C79622E26A5400895A58 /* SMSATests.swift */; };
 		7F81C7A222E26A5400895A58 /* SMSAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F81C7A122E26A5400895A58 /* SMSAUITests.swift */; };
 		7FB870B82334657E008C7727 /* SermonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB870B72334657E008C7727 /* SermonTableViewCell.swift */; };
+		7FB870BA2335C57C008C7727 /* NewAnnouncementsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB870B92335C57C008C7727 /* NewAnnouncementsTableViewController.swift */; };
 		7FDA68AD22E3C5D400536FBB /* AnnouncementsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */; };
 		7FDA68AF22E3C5E800536FBB /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA68AE22E3C5E800536FBB /* RSSParser.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		7F81C7A122E26A5400895A58 /* SMSAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSAUITests.swift; sourceTree = "<group>"; };
 		7F81C7A322E26A5400895A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FB870B72334657E008C7727 /* SermonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SermonTableViewCell.swift; sourceTree = "<group>"; };
+		7FB870B92335C57C008C7727 /* NewAnnouncementsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnnouncementsTableViewController.swift; sourceTree = "<group>"; };
 		7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsModel.swift; sourceTree = "<group>"; };
 		7FDA68AE22E3C5E800536FBB /* RSSParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +230,7 @@
 				0BD1FF77230B8C25008D190C /* LiveStreamViewController.swift */,
 				7F279FC7233158F50074D8D0 /* NowPlayingViewController.swift */,
 				7F279FC92332F5330074D8D0 /* CustomSlider.swift */,
+				7FB870B92335C57C008C7727 /* NewAnnouncementsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				7F81C78222E26A5300895A58 /* AnnouncementsViewController.swift in Sources */,
 				7F20ECFE2311F4EC00FB7DF8 /* iCalParser.swift in Sources */,
 				0B055B6F2312277700F30A6B /* HeaderCell.swift in Sources */,
+				7FB870BA2335C57C008C7727 /* NewAnnouncementsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
