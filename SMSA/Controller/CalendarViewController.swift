@@ -14,8 +14,8 @@ class CalendarViewController: UITableViewController {
     override func viewDidLoad() {
         
         // Following 2 lines are needed for the Event and Header Cell files under 'View' folder
-        tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
-        tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
+//        tableView.register(UINib(nibName: "HeaderCell", bundle: nil), forCellReuseIdentifier: "HeaderCell")
+//        tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
         
         // Hides the lines under the Navigation bar for a cleaner look (like Things)
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")

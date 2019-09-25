@@ -15,7 +15,7 @@ class SermonsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //SermonsModel.sermonsModel.test()
+        SermonsModel.sermonsModel.test()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

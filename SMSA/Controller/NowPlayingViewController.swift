@@ -11,7 +11,7 @@ import AVFoundation
 import AVKit
 import MediaPlayer
 
-class NowPlayingViewController: UIViewController {
+class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
     @IBOutlet weak var SkipForwardButton: UIButton!
     @IBOutlet weak var SkipBackButton: UIButton!
     @IBOutlet weak var PlayPauseButton: UIButton!
@@ -89,10 +89,10 @@ class NowPlayingViewController: UIViewController {
         
         
         //Add AirPlay picker
-        let audioPickerX = UIScreen.main.bounds.size.width*0.5 - 10
-        let audioPickerY = UIScreen.main.bounds.size.height*0.86
-        let audioPicker = AVRoutePickerView(frame: CGRect(x:audioPickerX, y:audioPickerY, width:20, height:20))
-        audioPicker.tintColor = UIColor(cgColor: PlayPauseButton.tintColor.cgColor) //same color as play button
+//        let audioPickerX = UIScreen.main.bounds.size.width*0.5 - 10
+//        let audioPickerY = UIScreen.main.bounds.size.height*0.86
+//        let audioPicker = AVRoutePickerView(frame: CGRect(x:audioPickerX, y:audioPickerY, width:20, height:20))
+//        audioPicker.tintColor = UIColor(cgColor: PlayPauseButton.tintColor.cgColor) //same color as play button
         //self.view.addSubview(audioPicker)
         
         
@@ -277,6 +277,11 @@ class NowPlayingViewController: UIViewController {
         nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = player?.rate
 
         nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+    }
+    
+    @IBAction func AirPlayButtonPressed(_ sender: Any) {
+        
+        
     }
     
     func setupRemoteCommandCenter() {
