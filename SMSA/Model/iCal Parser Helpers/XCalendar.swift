@@ -2,9 +2,7 @@
 //  XCalendar.swift
 //  SMSAcalendar
 //
-//  Created by Matthew Androus on 8/22/19.
-//  Copyright © 2019 SMSA Devs. All rights reserved.
-//
+/// Used and modified under the MIT License from: https://github.com/kiliankoe/iCalKit/
 
 import Foundation
 

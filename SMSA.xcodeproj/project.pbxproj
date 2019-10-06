@@ -129,16 +129,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7F20ECF52311F4EC00FB7DF8 /* iCal Parser */ = {
+		7F20ECF52311F4EC00FB7DF8 /* iCal Parser Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				7F20ECF62311F4EC00FB7DF8 /* iCal.swift */,
 				7F20ECF72311F4EC00FB7DF8 /* XCalendar.swift */,
 				7F20ECF82311F4EC00FB7DF8 /* XEvent.swift */,
-				7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */,
 				7F20ECFA2311F4EC00FB7DF8 /* Parser.swift */,
 			);
-			path = "iCal Parser";
+			path = "iCal Parser Helpers";
 			sourceTree = "<group>";
 		};
 		7F81C77322E26A5300895A58 = {
@@ -197,7 +196,8 @@
 		7FDA68A922E3C58E00536FBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7F20ECF52311F4EC00FB7DF8 /* iCal Parser */,
+				7F20ECF52311F4EC00FB7DF8 /* iCal Parser Helpers */,
+				7F20ECF92311F4EC00FB7DF8 /* iCalParser.swift */,
 				7FDA68AC22E3C5D400536FBB /* AnnouncementsModel.swift */,
 				7FDA68AE22E3C5E800536FBB /* RSSParser.swift */,
 				7F20ED022316053400FB7DF8 /* SermonsModel.swift */,

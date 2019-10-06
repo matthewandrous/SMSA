@@ -6,6 +6,14 @@
 //  Copyright © 2019 SMSA Devs. All rights reserved.
 //
 
+/* This class is the RSS Parser. It is used twice in the application.
+ Frist, it is used to parse the RSS feeds for the announcements.
+ Second, it is used to parse the RSS feed for the recorded sermons.
+ 
+ While we wrote most of this ourselves, we couldn't have done it without the many
+ programmers who have shared their expertise on GitHub and StackOverflow. Much love!
+ */
+
 import Foundation
 
 class RSSParser: NSObject, XMLParserDelegate {
@@ -17,9 +25,9 @@ class RSSParser: NSObject, XMLParserDelegate {
     var ftitle = NSMutableString()
     var link = NSMutableString()
     var img:  [AnyObject] = []
-    var img2:  [AnyObject] = []
-    var fdescription = NSMutableString()
-    var fdate = NSMutableString()
+    var img2:  [AnyObject] = [] //TODO
+    var fdescription = NSMutableString() //TODO
+    var fdate = NSMutableString() //TODO
     
     // initilise parser
     func initWithURL(_ url :URL) -> AnyObject {
@@ -43,7 +51,6 @@ class RSSParser: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         element = elementName as NSString
-        print("1")
         print(element)
         if (element as NSString).isEqual(to: "item") {
             elements =  NSMutableDictionary()
@@ -76,17 +83,19 @@ class RSSParser: NSObject, XMLParserDelegate {
             if ftitle != "" {
                 elements.setObject(ftitle, forKey: "title" as NSCopying)
             }
+            
             if link != "" {
                 elements.setObject(link, forKey: "link" as NSCopying)
             }
+            
             if fdescription != "" {
                 elements.setObject(fdescription, forKey: "description" as NSCopying)
             }
+            
             if fdate != "" {
                 elements.setObject(fdate, forKey: "pubDate" as NSCopying)
             }
-//            print("adding feed")
-//            print()
+            
             feeds.add(elements)
         }
     }
@@ -94,20 +103,15 @@ class RSSParser: NSObject, XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         if element.isEqual(to: "title") {
             ftitle.append(string)
-//            print(element)
         } else if element.isEqual(to: "link") {
             link.append(string)
-//            print(element)
         } else if element.isEqual(to: "description") {
             fdescription.append(string)
-//            print(element)
         } else if element.isEqual(to: "pubDate") {
             fdate.append(string)
-        }
-        else if element.isEqual(to: "enclosure"){
+        } else if element.isEqual(to: "enclosure") {
             print(string)
-        }
-        else if element.isEqual(to: "itunes:image"){
+        } else if element.isEqual(to: "itunes:image") {
             print(string)
         }
     }

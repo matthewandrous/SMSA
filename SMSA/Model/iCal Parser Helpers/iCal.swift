@@ -1,4 +1,5 @@
 import Foundation
+/// Used and modified under the MIT License from: https://github.com/kiliankoe/iCalKit/
 
 public enum iCal {
     /// Loads the content of a given string.

@@ -1,7 +1,8 @@
 import Foundation
 
-/// TODO add documentation
-internal class Parser {
+/// Used and modified under the MIT License from: https://github.com/kiliankoe/iCalKit/internal
+
+class Parser {
     let icsContent: [String]
     
     init(_ ics: [String]) {
@@ -41,8 +42,7 @@ internal class Parser {
                 field = line
             }
             
-//            print("Field: " + field)
-//            print("Data: " + data)
+
             switch field {
                 case "BEGIN:VCALENDAR\r":
                     calname = "none"
@@ -88,72 +88,3 @@ internal class Parser {
         return completeCal
     }
 }
-
-//    func read() throws -> [Calendar] {
-//        var completeCal = [Calendar?]()
-//
-//        // Such state, much wow
-//        var inCalendar = false
-//        var currentCalendar: Calendar?
-//        var inEvent = false
-//        var currentEvent: Event?
-//        var inAlarm = false
-//        var currentAlarm: Alarm?
-//
-//        for (_ , line) in icsContent.enumerated() {
-//            switch line {
-//            case "BEGIN:VCALENDAR\r":
-//                print("STARTING CALENDAR")
-//                inCalendar = true
-//                currentCalendar = Calendar(withComponents: nil)
-//                continue
-//            case "END:VCALENDAR\r":
-//                inCalendar = false
-//                completeCal.append(currentCalendar)
-//                currentCalendar = nil
-//                continue
-//            case "BEGIN:VEVENT\r":
-//                print("STARTING EVENT")
-//                inEvent = true
-//                currentEvent = Event()
-//                continue
-//            case "END:VEVENT\r":
-//                print("ENDING EVENT")
-//                inEvent = false
-//                currentCalendar?.append(component: currentEvent)
-//                currentEvent = nil
-//                continue
-//            case "BEGIN:VALARM\r":
-//                inAlarm = true
-//                currentAlarm = Alarm()
-//                continue
-//            case "END:VALARM\r":
-//                inAlarm = false
-//                currentEvent?.append(component: currentAlarm)
-//                currentAlarm = nil
-//                continue
-//            default:
-//                break
-//            }
-//
-//            guard let (key, value) = line.toKeyValuePair(splittingOn: ":") else {
-//                // print("(key, value) is nil") // DEBUG
-//                continue
-//            }
-//
-//            if inCalendar && !inEvent {
-//                currentCalendar?.addAttribute(attr: key, value)
-//            }
-//
-//            if inEvent && !inAlarm {
-//                currentEvent?.addAttribute(attr: key, value)
-//            }
-//
-//            if inAlarm {
-//                currentAlarm?.addAttribute(attr: key, value)
-//            }
-//        }
-//
-//        return completeCal.flatMap{ $0 }
-//    }
-
