@@ -23,3 +23,6 @@ This app is fully compatible with iOS 13, and of course, supports the snazzy new
 
 ## Roadmap
 In the future, we plan to add calendar and announcement filtering to allow users to only see what matters to them. We also plan to add opt-in notifications. And lastly, we plan to hit the Google Play store soon!
+
+## About Us
+This app was developed with love by a small team of volunteer developers at St. Mary and St. Athanasius Coptic Orthodox Church.
