@@ -57,9 +57,12 @@ class CalendarViewController: UITableViewController {
             var eventCell = EventCell()
             eventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventCell
             eventCell.eventName.text = temp["title"] as? String
-            eventCell.eventName.text = eventCell.eventName.text?.replacingOccurrences(of: "\r", with: "", options: NSString.CompareOptions.literal, range: nil)
-            eventCell.eventTime.text = String((temp["start"] as! String) + "–" + (temp["end"] as! String))
-            
+            if(temp["start"] == nil){
+                eventCell.eventTime.text = "There are no events scheduled on this day."
+            } else {
+                eventCell.eventName.text = eventCell.eventName.text?.replacingOccurrences(of: "\r", with: "", options: NSString.CompareOptions.literal, range: nil)
+                eventCell.eventTime.text = String((temp["start"] as! String) + "–" + (temp["end"] as! String))
+            }
             eventCell.updateConstraints()
             return eventCell
         }

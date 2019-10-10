@@ -43,7 +43,7 @@ class XEvent {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMddHHmmss"
         dateFormatter.timeZone = .current
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: -25200)
         
         //store start time Date() object
         self.dtstart = self.dtstart?.replacingOccurrences(of: "T", with: "")

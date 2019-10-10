@@ -107,13 +107,28 @@ class iCalParser{
         monthFormatter.timeZone = .current
         
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm"
+        timeFormatter.dateFormat = "h:mm a"
         timeFormatter.timeZone = .current
         
         
         for event in upcomingEvents{
             var dateWithoutTime = removeTimeStamp(fromDate: event["start"] as! Date)
-            if(dateWithoutTime != lastDate){
+            if(dateWithoutTime != lastDate){ /// if the next event is the first event on that date, and a date entry (so there can be a date header cell)
+                
+                if(lastDate != removeTimeStamp(fromDate: Date.init(timeIntervalSince1970: 0))){
+                    if(dateWithoutTime != lastDate.addingTimeInterval(86400)){///if the date of the next event isn't the same as the last event's date + 1 day
+                        var dateEntry = [String:Any]()
+                        dateEntry["type"] = "date"
+                        dateEntry["day"] = String(dayOfWeekFromatter.weekdaySymbols[Calendar.current.component(.weekday, from: lastDate.addingTimeInterval(86400))-1])
+                        dateEntry["date"] = String(monthFormatter.string(from: lastDate.addingTimeInterval(86400)))
+                        upcomingEventsWithDates.append(dateEntry)
+                        
+                        var eventEntry = [String:Any]()
+                        eventEntry["type"] = "event"
+                        eventEntry["title"] = "No Events"
+                        upcomingEventsWithDates.append(eventEntry)
+                    }
+                }
                
                 var dateEntry = [String:Any]()
                 dateEntry["type"] = "date"
