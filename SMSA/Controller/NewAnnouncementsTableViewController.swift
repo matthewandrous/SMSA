@@ -31,7 +31,23 @@ class NewAnnouncementsTableViewController: UITableViewController {
         let configuration = WKWebViewConfiguration()
         configuration.preferences = preferences
         
-        iCalParser.icp.doNothing()
+        //iCalParser.icp.doNothing()
+        //SermonsModel.sermonsModel.test()
+        
+        DispatchQueue.global().async {
+            iCalParser.icp.doNothing()
+            DispatchQueue.main.async {
+                //nothing
+            }
+        }
+        
+        //starting Sermons parsing in a seperate thread
+        DispatchQueue.global().async {
+            SermonsModel.sermonsModel.test()
+            DispatchQueue.main.async {
+                //nothing
+            }
+        }
     }
     
     

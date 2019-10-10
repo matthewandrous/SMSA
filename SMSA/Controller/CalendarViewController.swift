@@ -18,7 +18,7 @@ class CalendarViewController: UITableViewController {
 //        tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
         
         // Hides the lines under the Navigation bar for a cleaner look (like Things)
-        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        //self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
         // I have lost faith in this line
         tableView.rowHeight = UITableView.automaticDimension

@@ -50,7 +50,7 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         
         //starting Sermons parsing in a seperate thread
         DispatchQueue.global().async {
-            //SermonsModel.sermonsModel.test()
+            SermonsModel.sermonsModel.test()
             DispatchQueue.main.async {
                 //nothing
             }
