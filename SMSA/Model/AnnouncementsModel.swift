@@ -84,7 +84,7 @@ class AnnouncementsModel {
         dateFormatter.dateFormat = "E, d MMM yyy HH:mm:ss Z"
         
         let myparser = RSSParser()
-        myparser.initWithURL(URL(string: "https://www.st-athanasius.org/blogat?tag=" + tag + "&format=rss")!)
+        myparser.initWithURL(URL(string: "https://www.st-athanasius.org/announcements?tag=" + tag + "&format=rss")!)
 
         for feed  in myparser.feeds {
             var myfeed = feed as! [String:String]
@@ -105,7 +105,7 @@ class AnnouncementsModel {
         dateFormatter.dateFormat = "E, d MMM yyy HH:mm:ss Z"
         
         let myparser = RSSParser()
-        myparser.initWithURL(URL(string: "https://www.st-athanasius.org/blogat?format=rss")!)
+        myparser.initWithURL(URL(string: "https://www.st-athanasius.org/announcements?format=rss")!)
         
         for feed  in myparser.feeds {
             var myfeed = feed as! [String:String]
