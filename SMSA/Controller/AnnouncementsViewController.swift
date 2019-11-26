@@ -58,7 +58,8 @@ class AnnouncementsViewController: UIViewController, UITableViewDataSource, UITa
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if let index = self.announcementsTableView.indexPathForSelectedRow{
             self.announcementsTableView.deselectRow(at: index, animated: true)
         }

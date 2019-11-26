@@ -16,8 +16,8 @@ class SermonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        titleLabel.text = "blah"
-        descriptionLabel.text = "blah"
+//        titleLabel.text = "blah"
+//        descriptionLabel.text = "blah"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -51,10 +51,12 @@ class NewAnnouncementsTableViewController: UITableViewController {
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-//        if let index = self.announcementsTableView.indexPathForSelectedRow{
-//            self.announcementsTableView.deselectRow(at: index, animated: true)
-//        }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let index = self.tableView.indexPathForSelectedRow{
+            self.tableView.deselectRow(at: index, animated: true)
+            print("hello")
+        }
     }
 
     // MARK: - Table view data source

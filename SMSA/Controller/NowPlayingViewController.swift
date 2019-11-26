@@ -125,13 +125,15 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        if let index = DataManager.shared.SermonsTVC.tableView.indexPathForSelectedRow{
+            DataManager.shared.SermonsTVC.tableView.deselectRow(at: index, animated: true)
+        }
         SermonsModel.sermonsModel.lastProgress = player?.currentItem?.currentTime().seconds
         player?.isMuted = true
         player?.pause()
         try! AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
-
+        
     }
-    
     
     @objc func onSliderValChanged(slider: UISlider, event: UIEvent) {
         if let touchEvent = event.allTouches?.first {
@@ -154,8 +156,7 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
         }
     }
     
-    @objc func playbackSliderValueChanged(_ playbackSlider:UISlider)
-    {
+    @objc func playbackSliderValueChanged(_ playbackSlider:UISlider) {
         
         let seconds : Int64 = Int64(playbackSlider.value)
         let targetTime:CMTime = CMTimeMake(value: seconds, timescale: 1)
@@ -171,7 +172,7 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
     
     
     
-    func startPlaying(){
+    func startPlaying() {
         let url  = URL.init(string: SermonsModel.sermonsModel.selectedSermon["url"] as! String)
         
         playerItem = AVPlayerItem(url: url!)
@@ -211,12 +212,12 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
     
     func play(){
         player?.play()
-        PlayPauseButton.setBackgroundImage(#imageLiteral(resourceName: "pause"), for: UIControl.State.normal)
+        PlayPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
     }
     
     func pause(){
         player?.pause()
-        PlayPauseButton.setBackgroundImage(#imageLiteral(resourceName: "play"), for: UIControl.State.normal)
+        PlayPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
     }
     
     @IBAction func SkipForwardPressed(_ sender: Any) {
@@ -296,5 +297,9 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
             self.pause()
             return .success
         }
+    }
+    @IBAction func dismissButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: {
+        })
     }
 }

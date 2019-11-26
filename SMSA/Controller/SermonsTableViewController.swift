@@ -16,6 +16,9 @@ class SermonsTableViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //SermonsModel.sermonsModel.test()
+        tableView.estimatedRowHeight = 85.0
+        tableView.rowHeight = UITableView.automaticDimension
+        DataManager.shared.SermonsTVC = self
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,13 +29,16 @@ class SermonsTableViewController: UITableViewController {
         return SermonsModel.sermonsModel.sermonList.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> SermonTableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Sermon", for: indexPath) as! SermonTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Sermon", for: indexPath)
         var x = (SermonsModel.sermonsModel.sermonList[indexPath.row]["title"] as! String)
         var y = x.components(separatedBy: "|")
         
-        cell.titleLabel!.text = y[0]
-        cell.descriptionLabel!.text = y[1]
+//        cell.titleLabel!.text = y[0]
+//        cell.descriptionLabel!.text = y[1]
+        
+        cell.textLabel?.text = y[0]
+        cell.detailTextLabel?.text = y[1]
         return cell
     }
     
@@ -48,6 +54,14 @@ class SermonsTableViewController: UITableViewController {
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "NowPlayingVC")
         newViewController.modalPresentationStyle = .popover
         self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    func deselectTableView() {
+        DispatchQueue.main.async {
+            if let index = self.tableView.indexPathForSelectedRow{
+                self.tableView.deselectRow(at: index, animated: true)
+            }
+        }
     }
 
 }
