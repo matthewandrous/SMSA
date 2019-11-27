@@ -40,9 +40,21 @@ class SermonsTableViewController: UITableViewController {
         cell.textLabel?.text = y[0]
         cell.detailTextLabel?.text = y[1]
         
-        cell.accessoryType = .disclosureIndicator
+        cell.accessoryView = nil
+        print("nope")
         if (SermonsModel.sermonsModel.sermonList[indexPath.row]["inProgress"] as! Bool){
-            cell.accessoryType = .detailDisclosureButton
+//            cell.accessoryType = .disclosureIndicator
+            print("found it")
+            let font = UIFont(name: "icomoon", size: 50.0)
+            let icon = "\u{25B6}"
+ 
+            let lbl = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+            lbl.font = font
+            lbl.text = icon
+            lbl.textColor =  UIColor.red
+//            cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            cell.accessoryView = lbl
+            cell.tintColor = UIColor.red
         }
         
         

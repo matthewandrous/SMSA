@@ -34,6 +34,10 @@ class SermonsModel {
             sameSermonSelected = true
         } else {
             sameSermonSelected = false
+            if  lastSelectedSermonIndex != nil{
+                sermonList[lastSelectedSermonIndex!]["inProgress"] = false
+                print("setting old one to false")
+            }
         }
     }
     

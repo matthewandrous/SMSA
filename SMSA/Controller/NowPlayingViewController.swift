@@ -84,6 +84,11 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
                 self.progressLabel?.text = self.SecondsToHoursMinutesSeconds(secondsDouble: progress)
                 self.timeLeftLabel?.text = self.SecondsToHoursMinutesSeconds(secondsDouble:(Double(duration.seconds) - progress))
                 print(progress)
+                
+                let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
+                var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
+                
+                self.updateNowPlayingTime()
             }
         })
         
@@ -99,7 +104,8 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
         //set up media player and lockscreen controls
         setNowPlayingInfo()
         setupRemoteCommandCenter()
-        
+        try! AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -260,6 +266,14 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
     {
         let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
         var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
+        
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playerItem!.currentTime().seconds
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = playerItem!.asset.duration.seconds
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = player?.rate
+
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+        
+
 
         let title = trackTitle
         let album = trackDescription
@@ -272,6 +286,17 @@ class NowPlayingViewController: UIViewController, AVRoutePickerViewDelegate {
         nowPlayingInfo[MPMediaItemPropertyTitle] = title
         nowPlayingInfo[MPMediaItemPropertyAlbumTitle] = album
         nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
+        
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playerItem!.currentTime().seconds
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = playerItem!.asset.duration.seconds
+        nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = player?.rate
+
+        nowPlayingInfoCenter.nowPlayingInfo = nowPlayingInfo
+    }
+    
+    func updateNowPlayingTime(){
+        let nowPlayingInfoCenter = MPNowPlayingInfoCenter.default()
+        var nowPlayingInfo = nowPlayingInfoCenter.nowPlayingInfo ?? [String: Any]()
         
         nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = playerItem!.currentTime().seconds
         nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = playerItem!.asset.duration.seconds
