@@ -27,6 +27,7 @@ class SermonsModel {
         lastSelectedSermonIndex = selectedSermonIndex
         selectedSermonIndex = index
         selectedSermon = sermonList[index]
+        sermonList[index]["inProgress"] = true
         
         if lastSelectedSermonIndex == selectedSermonIndex {
             print("they selected the same one!")
@@ -55,6 +56,7 @@ class SermonsModel {
             print(myparser.img2[index])
 //            currSermon["description"] = myfeed["description"]
             currSermon["pubDate"] = dateFormatter.date(from: (myfeed["pubDate"]!) )
+            currSermon["inProgress"] = false
             //            print(currSermon["pubDate"]!)
 //            currSermon["tag"] = "none"
             sermonList.append(currSermon)

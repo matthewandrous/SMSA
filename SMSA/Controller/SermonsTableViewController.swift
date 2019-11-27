@@ -39,17 +39,24 @@ class SermonsTableViewController: UITableViewController {
         
         cell.textLabel?.text = y[0]
         cell.detailTextLabel?.text = y[1]
+        
+        cell.accessoryType = .disclosureIndicator
+        if (SermonsModel.sermonsModel.sermonList[indexPath.row]["inProgress"] as! Bool){
+            cell.accessoryType = .detailDisclosureButton
+        }
+        
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         showTutorial(indexPath.row)
-        tableView.cellForRow(at: indexPath)?.accessoryType = .detailButton
     }
     
     
     func showTutorial(_ which: Int) {
         SermonsModel.sermonsModel.selectSermon(index: which)
+        tableView.reloadData()
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "NowPlayingVC")
         newViewController.modalPresentationStyle = .popover
